@@ -1,0 +1,1 @@
+TRAIN_CSV_PATH = './dataset/siim-covid19-detection/train_study_level.csv'
