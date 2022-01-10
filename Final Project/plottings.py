@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
+colors = ['#001c57', '#50248f', '#00ff00', '#38d1ff','#cc3181','#FFBA08']
 
 def plot_countplot(df, col_name, title=None, figsize=(15,5)):
     '''
