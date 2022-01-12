@@ -1,5 +1,5 @@
 # File for visualizing Digital Imaging in Medicine (DICOM)
-# voi - volume of interst
+# voi - volume of interest
 # lut - look up table
 # https://www.medicalconnections.co.uk/kb/Lookup-Tables
 import matplotlib.pyplot as plt

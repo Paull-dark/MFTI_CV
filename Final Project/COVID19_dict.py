@@ -25,14 +25,16 @@ def build_COVID19_data_dicts(
     cache_path = Path('.') / f"dataset_dicts_cache_{cache_mode}.pkl"
     if not use_cache or not cache_path.exists():
         print('Creating the data ==> ...')
-        df_meta = pd.read_csv(f'{DATA_ROOT_RESIZED}/img_sz_640/meta_sz_640.csv')
+        #df_meta = pd.read_csv(f'{DATA_ROOT_RESIZED}/img_sz_640/meta_sz_640.csv') !!!!!!!!!!!!!!!!!!!!!
+        df_meta = pd.read_csv('/home/paul/Github/MFTI_CV/Final Project/dataset/resized_pics/meta_1.csv')
         sub_meta = df_meta[df_meta.split == data_type]
         if debug:
             sub_meta = sub_meta.iloc[:100] # for debuging
 
         # load one image to get image size
         image_id = sub_meta.iloc[0,0]
-        image_path = f'{DATA_ROOT_RESIZED}/img_sz_640/train/{image_id}.jpg'
+        #image_path = f'{DATA_ROOT_RESIZED}/img_sz_640/train/{image_id}.jpg' !!!!!!!!!!!!!!!!!1
+        image_path = f'/home/paul/Github/MFTI_CV/Final Project/dataset/resized_pics/train/{image_id}.jpg'
         image = cv2.imread(image_path)
         resized_height, resized_width, ch = image.shape
         print(f"image shape: {image.shape}")
@@ -41,7 +43,8 @@ def build_COVID19_data_dicts(
         for index, sub_meta_row in tqdm(sub_meta.iterrows(), total=len(sub_meta)):
             record = {}
             image_id, height, width,s = sub_meta_row.values
-            filename = f'{DATA_ROOT_RESIZED}/img_sz_640/train/{image_id}.jpg'
+            #filename = f'{DATA_ROOT_RESIZED}/img_sz_640/train/{image_id}.jpg' !!!!!!!!!!!!!!!!!
+            filename = f'/home/paul/Github/MFTI_CV/Final Project/dataset/resized_pics/train/{image_id}.jpg'
             record["file_name"] = filename
             record["image_id"] = image_id
             record["height"] = resized_height
@@ -57,8 +60,8 @@ def build_COVID19_data_dicts(
                     class_id = row["integer_label"]
                     if class_id == 2: #"no class or none"
                         # Используем класс none  c bbox покрывающей всю площадь изобр.
-                        # bbox_resized = [0, 0, resized_width, resized_height]
-                        bbox_resized = [50,50,200,200]
+                        bbox_resized = [0, 0, resized_width, resized_height]
+                        #bbox_resized = [50,50,200,200] !!!!!!!!!!!!!!!!!!!!!!!!!1
                         obj = {
                             "bbox": bbox_resized,
                             "bbox_mode": BoxMode.XYXY_ABS,
