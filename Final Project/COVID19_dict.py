@@ -52,8 +52,8 @@ def build_COVID19_data_dicts(
             else:
                 for index2, row in train_df.query('id==@image_id').iterrows():
                     #print(row)
-                    #print(row["class"])
-                    class_name = row["class"]
+                    #print(row["class_name"])
+                    #class_name = row["class_name"] #class
                     class_id = row["integer_label"]
                     if class_id == 2: #"no class or none"
                         # Используем класс none  c bbox покрывающей всю площадь изобр.
