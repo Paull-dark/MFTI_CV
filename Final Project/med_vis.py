@@ -51,4 +51,4 @@ def plot_imgs(imgs, cols=4, size=7, title="", cmap='gray', img_size=(500,500)):
         plt.axis('off')
     plt.suptitle(title)
     plt.tight_layout(pad=0.5)
-    plt.show()
+    plt.show() #show
