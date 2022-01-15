@@ -3,6 +3,13 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/mmdetection/mmdet/.mim" />
+      <excludeFolder url="file://$MODULE_DIR$/mmdetection/tests/test_onnx/data" />
+      <excludeFolder url="file://$MODULE_DIR$/mmdetection/tests/data" />
+      <excludeFolder url="file://$MODULE_DIR$/mmdetection/mmdet.egg-info" />
+      <excludeFolder url="file://$MODULE_DIR$/.ipynb_checkpoints" />
+      <excludeFolder url="file://$MODULE_DIR$/dataset" />
+      <excludeFolder url="file://$MODULE_DIR$/mmdetection" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
